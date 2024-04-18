@@ -2,7 +2,7 @@
 
 ################################################
 #
-# Leetcode 1
+# Leetcode 1 Two Sum
 # URL: https://leetcode.com/problems/two-sum/
 #
 ################################################
@@ -11,6 +11,7 @@ from typing import List
 
 
 class Solution:
+
     def two_sum(self, nums: List[int], target: int) -> List[int]:
         dic = {}
         for index, num in enumerate(nums):
