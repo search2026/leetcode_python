@@ -27,6 +27,7 @@ This project is coded in:
 
 - Python 3.11.8
 - Pycharm 2024.1
+- Python [Black](https://github.com/psf/black) formatter
 
 
 The test cases uses the default `pytest` framework.

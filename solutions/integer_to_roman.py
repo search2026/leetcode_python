@@ -12,7 +12,6 @@ class Solution:
     def int_to_roman(self, num: int) -> str:
         # Creating Dictionary for Lookup
         num_map = {
-
             1: "I",
             5: "V",
             4: "IV",
