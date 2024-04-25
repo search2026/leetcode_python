@@ -4,6 +4,7 @@
 #
 # Leetcode 13 Roman to Integer
 # URL: https://leetcode.com/problems/roman-to-integer/description/
+# Difficulty: Easy
 #
 ################################################
 

@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from typing import List
 
+
 ################################################
 #
 # Leetcode 121. Best Time to Buy and Sell Stock
 # URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
-#
+# Difficulty: Easy
 ################################################
 
 
@@ -20,10 +21,12 @@ class Solution:
 
         return max_profit
 
+
 ################################################
 #
 # Leetcode 122. Best Time to Buy and Sell Stock II
 # URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+# Difficulty: Medium
 #
 ################################################
 
@@ -52,6 +55,7 @@ class Solution2:
 #
 # Leetcode 123. Best Time to Buy and Sell Stock III
 # URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
+# Difficulty: hard
 #
 ################################################
 
@@ -76,10 +80,12 @@ class Solution3:
 
         return sell2
 
+
 ################################################
 #
 # Leetcode 188. Best Time to Buy and Sell Stock IV
 # URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/
+# Difficulty: Hard
 #
 ################################################
 
@@ -92,29 +98,31 @@ class DoubleLinkListNode:
 
 
 class Solution4:
-        def max_profit(self, k: int, prices: List[int]) -> int:
-            # no transaction, no profit
-            if k == 0:
-                return 0
-            # dp[k][0] = min cost you need to spend at most k transactions
-            # dp[k][1] = max profit you can achieve at most k transactions
-            dp = [[1000, 0] for _ in range(k + 1)]
-            for price in prices:
-                for i in range(1, k + 1):
-                    # price - dp[i - 1][1] is how much you need to spend,
-                    # i.e. use the profit you earned from previous transaction to buy the stock
-                    # we want to minimize it
-                    dp[i][0] = min(dp[i][0], price - dp[i - 1][1])
-                    # price - dp[i][0] is how much you can achieve from previous min cost
-                    # we want to maximize it
-                    dp[i][1] = max(dp[i][1], price - dp[i][0])
-            # return max profit at most k transactions, or you can write `return dp[-1][1]`
-            return dp[k][1]
+    def max_profit(self, k: int, prices: List[int]) -> int:
+        # no transaction, no profit
+        if k == 0:
+            return 0
+        # dp[k][0] = min cost you need to spend at most k transactions
+        # dp[k][1] = max profit you can achieve at most k transactions
+        dp = [[1000, 0] for _ in range(k + 1)]
+        for price in prices:
+            for i in range(1, k + 1):
+                # price - dp[i - 1][1] is how much you need to spend,
+                # i.e. use the profit you earned from previous transaction to buy the stock
+                # we want to minimize it
+                dp[i][0] = min(dp[i][0], price - dp[i - 1][1])
+                # price - dp[i][0] is how much you can achieve from previous min cost
+                # we want to maximize it
+                dp[i][1] = max(dp[i][1], price - dp[i][0])
+        # return max profit at most k transactions, or you can write `return dp[-1][1]`
+        return dp[k][1]
+
 
 ################################################
 #
 # Leetcode 309. Best Time to Buy and Sell Stock with Cooldown
 # URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
+# Difficulty: Medium
 #
 ################################################
 
@@ -176,16 +184,18 @@ class Solution5:
 
         return max(s0[-1], s2[-1])
 
+
 ################################################
 #
-# Leetcode 309. Best Time to Buy and Sell Stock with Cooldown
-# URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
+# Leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee
+# URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/
+# Difficulty: Medium
 #
 ################################################
 
 
-class Solution:
-    def maxProfit(self, prices: List[int], fee: int) -> int:
+class Solution6:
+    def max_profit(self, prices: List[int], fee: int) -> int:
         buy = float('-inf')
         sell = 0
 

@@ -4,6 +4,8 @@
 #
 # Leetcode 0 Blank template
 # URL: https://leetcode.com/problems/PROBLEM_TITLE/
+# Difficulty: Medium
+#
 ################################################
 
 
