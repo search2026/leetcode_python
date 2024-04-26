@@ -34,6 +34,7 @@ This project is coded in:
 The test cases uses the default `pytest` framework.
 
 use `python -m unittest` to run all tests
+use `coverage run -m pytest tests` to run test coverage tests.
 
 ## Code Layout
 
