@@ -26,9 +26,10 @@ Solutions for some Leetcode problems in Python3.
 
 This project is coded in:
 
-- Python 3.11.8
-- Pycharm 2024.1
+- Python 3.11.9
+- Pycharm 2024.1 with [codeium](https://codeium.com) plugin
 - Python [Black](https://github.com/psf/black) formatter
+- [codecov](https://codecov.io) coverage test
 
 The test cases uses the default `pytest` framework.
 
@@ -42,3 +43,7 @@ use `python -m unittest` to run all tests
 - `utils`: contains some of the utilities for the Leetcode solutions.
 
 - `utils`: contains unit tests.
+
+## Update History
+
+- Apr. 2024 repository setup
