@@ -44,8 +44,8 @@ use `coverage html` to generate code coverage reports in html to `htmlcov/index.
 
 - `utils`: contains some of the utilities for the Leetcode solutions.
 
-- `utils`: contains unit tests.
+- `tests`: contains unit tests.
 
 ## Update History
 
-- Apr. 2024 repository setup
+- Apr. 2024 created repository
