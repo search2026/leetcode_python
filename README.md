@@ -27,9 +27,7 @@ Solutions for some Leetcode problems in Python3.
 This project is coded in:
 
 - Python 3.11.9
-- Pycharm 2024.1 with [codeium](https://codeium.com) plugin
-- Python [Black](https://github.com/psf/black) formatter
-- [codecov](https://codecov.io) coverage test
+- Pycharm 2024.1 with [codeium](https://codeium.com) and [Black](https://github.com/psf/black) formatter plugin
 
 The test cases uses the default `pytest` framework.
 

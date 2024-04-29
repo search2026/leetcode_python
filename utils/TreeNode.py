@@ -3,10 +3,14 @@ import json
 
 
 class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+    def __repr__(self):
+        return 'TreeNode({})'.format(self.val)
 
     @classmethod
     def stringToTreeNode(cls, in_str):
@@ -81,3 +85,19 @@ class TreeNode:
         if not len_of_list:
             len_of_list = len(nums)
         return json.dumps(nums[:len_of_list])
+
+
+def deserialize(string):
+    if string == '[]':
+        return None
+    nodes = [None if val == 'null' else TreeNode(int(val))
+             for val in string.strip('[]').split(',')]
+    kids = nodes[::-1]
+    root = kids.pop()
+    for node in nodes:
+        if node:
+            if kids:
+                node.left = kids.pop()
+            if kids:
+                node.right = kids.pop()
+    return root
