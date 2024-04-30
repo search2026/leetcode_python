@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
 import re
-from collections import defaultdict
+from collections import defaultdict, deque
 from typing import List, Optional, Mapping
 from functools import cmp_to_key
 
@@ -155,7 +155,6 @@ class Atom:
         for k in self.h:
             for kk in other.h:
                 h[f(k, kk)] += self.h[k] * other.h[kk]
-        print('here', h, list(self.h.keys()), list(other.h.keys()))
         return Atom({k: v for k, v in h.items() if v})
 
     def __repr__(self):
@@ -173,7 +172,6 @@ class Parser:
     def __init__(self, s, h):
         self.tokens = deque(re.findall('[a-z]+|[0-9]+|\+|\*|-|\(|\)', s))
         self.h = h
-        print(s)
 
     def _test(self, pred=lambda x: True):
         return self.tokens and pred(self.tokens[0])
@@ -223,5 +221,5 @@ class Parser:
 
 
 class Solution4:
-    def basicCalculatorIV(self, expression: str, evalvars: List[str], evalints: List[int]) -> List[str]:
+    def basic_calculator_iv(self, expression: str, evalvars: List[str], evalints: List[int]) -> List[str]:
         return Parser(expression, dict(zip(evalvars, evalints))).parse()

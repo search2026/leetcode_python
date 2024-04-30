@@ -2,7 +2,7 @@ import unittest
 from solutions.basic_calculator import Solution, Solution2, Solution3, Solution4
 
 
-class TestbasicCalculator(unittest.TestCase):
+class TestBasicCalculator(unittest.TestCase):
     def test_basic_calculator(self):
         solution = Solution()
         s = "1 + 1"
@@ -65,24 +65,26 @@ class TestbasicCalculator(unittest.TestCase):
         evalvars = ["e"]
         evalints = [1]
         expect = ["-1*a", "14"]
-        actual = solution.basicCalculatorIV(expression, evalvars, evalints)
+        actual = solution.basic_calculator_iv(expression, evalvars, evalints)
         self.assertCountEqual(expect, actual)
 
         expression = "e - 8 + temperature - pressure"
         evalvars = ["e", "temperature"]
         evalints = [1, 12]
         expect = ["-1*pressure", "5"]
-        actual = solution.basicCalculatorIV(expression, evalvars, evalints)
+        actual = solution.basic_calculator_iv(expression, evalvars, evalints)
         self.assertCountEqual(expect, actual)
 
         expression = "(e + 8) * (e - 8)"
         evalvars = []
         evalints = []
         expect = ["1*e*e", "-64"]
-        actual = solution.basicCalculatorIV(expression, evalvars, evalints)
+        actual = solution.basic_calculator_iv(expression, evalvars, evalints)
         self.assertCountEqual(expect, actual)
 
-        s = "1 + 1"
-        expect = 2
-        actual = solution.calculate(s)
-        self.assertEqual(expect, actual)
+        expression = "(e + 8) * (e - 8)"
+        evalvars = []
+        evalints = []
+        expect = ["1*e*e", "-64"]
+        actual = solution.basic_calculator_iv(expression, evalvars, evalints)
+        self.assertCountEqual(expect, actual)

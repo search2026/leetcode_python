@@ -5,7 +5,7 @@ from typing import List
 ################################################
 #
 # Leetcode 1. Two Sum
-# URL: https://leetcode.com/problems/two-sum/
+# URL: https://leetcode.com/problems/two-sum/description/
 # Difficulty: Easy
 #
 ################################################
@@ -55,8 +55,8 @@ class TwoSum:
     def __init__(self):
         self.structure = []
 
-    def add(self, input):
-        self.structure.append(input)
+    def add(self, in_str):
+        self.structure.append(in_str)
 
     def find(self, value):
         return self.twoSum(self.structure, value)

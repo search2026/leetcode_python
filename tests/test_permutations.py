@@ -25,7 +25,6 @@ class TestPermutations(unittest.TestCase):
         nums = [1, 1, 2]
         expect = [[1, 1, 2], [1, 2, 1], [2, 1, 1]]
         actual = solution.permute_unique(nums)
-        print(actual)
         self.assertCountEqual(expect, actual)
 
         nums = [1, 2, 3]
