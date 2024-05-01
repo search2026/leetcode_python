@@ -18,7 +18,8 @@ Input: `s = "ccaabbb"`
 Output: 5
 Explanation: The substring is "aabbb" which its length is 5.
 ```
-Constraints:
+
+**Constraints:**
 
 - `1 <= s.length <= 105`
 - `s` consists of English letters.

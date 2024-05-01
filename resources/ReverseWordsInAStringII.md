@@ -20,7 +20,7 @@ Your code must solve the problem **in-plac**e, i.e. without allocating extra spa
 - Input: `s = ["a"]`
 - Output: `["a"]`
 
-Constraints:
+**Constraints:**
 
 - `1 <= s.length <= 105`
 - `s[i]` is an English letter (uppercase or lowercase), digit, or space `' '`.

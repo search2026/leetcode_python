@@ -15,27 +15,24 @@ from typing import List
 class Solution:
 
     def can_finish(self, num_courses: int, prerequisites: List[List[int]]) -> bool:
-        # Topological Sort
-        alist = collections.defaultdict(list)
-        order = [0] * num_courses
-        for i, j in prerequisites:
-            alist[j].append(i)
-            order[i] += 1
-        q = collections.deque()
-        for i in range(len(order)):
-            if order[i] == 0:
-                q.append(i)
+        in_degree = collections.defaultdict(int)
+        graph = collections.defaultdict(list)
+        # in_degree = collections.Counter([crs for crs, dep in prerequisites])
+        for crs, dep in prerequisites:
+            graph[dep].append(crs)
+            in_degree[crs] = in_degree.get(crs, 0) + 1
 
-        count = 0
-        while q:
-            current = q.popleft()
-            count += 1
-            for i in alist[current]:
-                order[i] -= 1
-                if order[i] == 0:
-                    q.append(i)
-
-        return count == num_courses
+        # Topological sort
+        no_dep_list = [x for x in range(num_courses) if in_degree[x] == 0]
+        res = []
+        while no_dep_list:
+            cs = no_dep_list.pop()
+            res.append(cs)
+            for cs_greater in graph[cs]:
+                in_degree[cs_greater] -= 1
+                if in_degree[cs_greater] == 0:
+                    no_dep_list.append(cs_greater)
+        return len(res) == num_courses
 
 
 ################################################

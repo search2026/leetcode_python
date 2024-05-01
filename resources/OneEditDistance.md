@@ -35,3 +35,8 @@ Input: s = "1203", t = "1213"
 Output: true
 Explanation: We can replace '0' with '1' to get t.
 ```
+
+**Constraints:**
+
+- `0 <= s.length, t.length <= 104`
+- `s` and `t` consist of lowercase letters, uppercase letters, and digits.

@@ -32,7 +32,7 @@ Output: []
 Explanation: There are no missing ranges since there are no missing numbers.
 ```
 
-Constraints:
+**Constraints:**
 
 - `-109 <= lower <= upper <= 109`
 - `0 <= nums.length <= 100`
