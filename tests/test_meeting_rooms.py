@@ -6,10 +6,10 @@ class TestMeetingRooms(unittest.TestCase):
     def test_meeting_rooms(self):
         solution = Solution()
         intervals = [[0, 30], [5, 10], [15, 20]]
-        self.assertFalse(solution.canAttendMeetings(intervals))
+        self.assertFalse(solution.can_attend_meetings(intervals))
 
         intervals = [[7, 10], [2, 4]]
-        self.assertTrue(solution.canAttendMeetings(intervals))
+        self.assertTrue(solution.can_attend_meetings(intervals))
 
     def test_meeting_rooms2(self):
         solution = Solution2()

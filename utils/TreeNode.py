@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import collections
 import json
 
 
@@ -101,3 +102,36 @@ def deserialize(string):
             if kids:
                 node.right = kids.pop()
     return root
+
+
+def arrayToTreeNode(arr: list) -> TreeNode:
+    if not arr:
+        return None
+    nodes = [None if not val else TreeNode(int(val))
+             for val in arr]
+    kids = nodes[::-1]
+    root = kids.pop()
+    for node in nodes:
+        if node:
+            if kids:
+                node.left = kids.pop()
+            if kids:
+                node.right = kids.pop()
+    return root
+
+
+def serialize(root: TreeNode):
+    # use level order traversal to match LeetCode's serialization format
+    res = []
+    queue = collections.deque([root])
+    while queue:
+        node = queue.pop()
+        if node:
+            res.append(str(node.val))
+            queue.appendleft(node.left)
+            queue.appendleft(node.right)
+        else:
+            # you can use any char to represent null
+            # empty string means test for a non-null node is simply: flat_bt[i]
+            res.append(None)
+    return res

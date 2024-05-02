@@ -1,6 +1,6 @@
 import unittest
 from solutions.kth_smallest_element_in_a_bst import Solution
-from utils.TreeNode import TreeNode, deserialize
+from utils.TreeNode import deserialize
 
 
 class TestKKthSmallestElementInABST(unittest.TestCase):
