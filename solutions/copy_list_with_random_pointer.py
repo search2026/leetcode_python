@@ -42,21 +42,22 @@ class Node:
 
 
 class Solution:
-    def copy_random_list(self, head: 'Node') -> 'Node':
-        if head is None:
+    def copy_random_list(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if not head:
             return None
         mapping = {}
-        cur = head
-        while cur:
-            mapping[cur] = Node(cur.val,None,None)
-            cur = cur.next
-        cur = head
-        while cur:
-            if cur.next:
-                mapping[cur].next = mapping[cur.next]
-            if cur.random:
-                mapping[cur].random = mapping[cur.random]
-            cur = cur.next
+
+        curr = head
+        while curr:
+            mapping[curr] = Node(curr.val)
+            curr = curr.next
+
+        curr = head
+        while curr:
+            mapping[curr].next = mapping.get(curr.next)
+            mapping[curr].random = mapping.get(curr.random)
+            curr = curr.next
+
         return mapping[head]
 
 
