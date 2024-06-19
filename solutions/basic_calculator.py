@@ -80,30 +80,91 @@ class Solution2:
 
 class Solution3:
     def calculate(self, s: str) -> int:
-        operands, operators = [], []
-        operand = ""
-        for i in reversed(range(len(s))):
-            if s[i].isdigit():
-                operand += s[i]
-                if i == 0 or not s[i - 1].isdigit():
-                    operands.append(int(operand[::-1]))
-                    operand = ""
-            elif s[i] == ')' or s[i] == '*' or s[i] == '/':
-                operators.append(s[i])
-            elif s[i] == '+' or s[i] == '-':
-                while operators and \
-                        (operators[-1] == '*' or operators[-1] == '/'):
-                    self.compute(operands, operators)
-                operators.append(s[i])
+        def precedence(op):
+            if op == '(' or op == ')':
+                return 0
+            elif op == '+' or op == '-':
+                return 1
+            else:
+                return 2
+
+        def apply_operand(op, b, a):
+            if op == '+':
+                return a + b
+            elif op == '-':
+                return a - b
+            elif op == '*':
+                return a * b
+            else:
+                return a // b
+
+        nums = []
+        ops = []
+
+        i = 0
+        while i < len(s):
+            if s[i] == ' ':
+                i += 1
+            elif s[i] in '0123456789':
+                num = 0
+                while (i < len(s) and
+                       s[i] in '0123456789'):
+                    num = (num * 10 + int(s[i]))
+                    i += 1
+                nums.append(num)
+                i -= 1
             elif s[i] == '(':
-                while operators[-1] != ')':
-                    self.compute(operands, operators)
-                operators.pop()
+                ops.append(s[i])
+            elif s[i] == ')':
+                while ops[-1] != '(':
+                    num2 = nums.pop()
+                    num1 = nums.pop()
+                    op = ops.pop()
+                    nums.append(apply_operand(op, num2, num1))
+                ops.pop()
+            else:
+                while (ops and ops[-1] != '(' and
+                       precedence(ops[-1]) >= precedence(s[i])):
+                    num2 = nums.pop()
+                    num1 = nums.pop()
+                    op = ops.pop()
+                    nums.append(apply_operand(op, num2, num1))
+                ops.append(s[i])
+            i += 1
 
-        while operators:
-            self.compute(operands, operators)
+        while ops:
+            num2 = nums.pop()
+            num1 = nums.pop()
+            op = ops.pop()
+            nums.append(apply_operand(op, num2, num1))
 
-        return operands[-1]
+        return nums[0]
+
+    # def calculate(self, s: str) -> int:
+    #     operands, operators = [], []
+    #     operand = ""
+    #     for i in reversed(range(len(s))):
+    #         if s[i].isdigit():
+    #             operand += s[i]
+    #             if i == 0 or not s[i - 1].isdigit():
+    #                 operands.append(int(operand[::-1]))
+    #                 operand = ""
+    #         elif s[i] == ')' or s[i] == '*' or s[i] == '/':
+    #             operators.append(s[i])
+    #         elif s[i] == '+' or s[i] == '-':
+    #             while operators and \
+    #                     (operators[-1] == '*' or operators[-1] == '/'):
+    #                 self.compute(operands, operators)
+    #             operators.append(s[i])
+    #         elif s[i] == '(':
+    #             while operators[-1] != ')':
+    #                 self.compute(operands, operators)
+    #             operators.pop()
+    #
+    #     while operators:
+    #         self.compute(operands, operators)
+    #
+    #     return operands[-1]
 
     def compute(self, operands, operators):
         left, right = operands.pop(), operands.pop()
