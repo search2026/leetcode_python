@@ -10,15 +10,15 @@
 Solutions for some Leetcode problems in Python3.
 
 | problem set                                                                                                    | Solution                                    | Status      |
-|----------------------------------------------------------------------------------------------------------------|---------------------------------------------|-------------|
+| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ----------- |
 | [Leetcode 50 Common Interview Questions](media/Clean_Code_Handbook-LeetCode_50_Common_Interview_Questions.pdf) | [Problem & Solution](leetcode_common_50.md) | Completed   |
 | [Blind 75](https://leetcode.com/list/oizxjoit)                                                                 | [Problem & Solution](blind_75.md)           | In Progress |
 | [Grind 75](https://leetcode.com/list/rab78cw1)                                                                 |                                             | Not started |
 | [Grind 169](https://leetcode.com/list/rabvlt31)                                                                |                                             | Not started |
 | [Neetcode 150](https://leetcode.com/list/rr2ss0g5)                                                             |                                             | Not started |
 | [Leetcode 75](https://leetcode.com/studyplan/leetcode-75/)                                                     |                                             | Not started |
-| [Leetcode 75](https://leetcode.com/studyplan/leetcode-75/)                                                     |                                             | Not started |
 | [Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)                                         |                                             | Not started |
+| [Facebook High Frequency]                                                     |                                             | Not started |
 | All above of leetcode problems in python                                                                       | [Leetcode Problems](leetcode.md)            | In progress |
 | [SQL 50](https://leetcode.com/studyplan/top-sql-50/)                                                           |                                             | Not started |
 
