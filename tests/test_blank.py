@@ -7,4 +7,4 @@ class TestBlank(unittest.TestCase):
         solution = Solution()
         expect = 0
         actual = solution.method()
-        assert actual == expect
+        self.assertEqual(expect, actual)
