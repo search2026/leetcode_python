@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-from typing import List
+from typing import List, Optional
+
+from utils.ListNode import ListNode
+from utils.TreeNode import TreeNode
 
 ################################################
 #
