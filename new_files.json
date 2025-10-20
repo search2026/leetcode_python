@@ -1,0 +1,67 @@
+[
+    {
+        "url": "https://leetcode.com/problems/reorder-list/description/",
+        "leetcode_number": "143. Reorder List",
+        "diffculty": "Medium"
+    },
+    {
+        "url": "https://leetcode.com/problems/reverse-bits/description/",
+        "leetcode_number": "190. Reverse Bits",
+        "diffculty": "Easy"
+    },
+    {
+        "url": "https://leetcode.com/problems/number-of-1-bits/description/",
+        "leetcode_number": "191. Number of 1 Bits",
+        "diffculty": "easy"
+    },
+    {
+        "url": "https://leetcode.com/problems/house-robber/description/",
+        "leetcode_number": "198. House Robber",
+        "diffculty": "Medium"
+    },
+    {
+        "url": "https://leetcode.com/problems/number-of-islands/description/",
+        "leetcode_number": "200. Number of Islands",
+        "diffculty": "Medium"
+    },
+    {
+        "url": "https://leetcode.com/problems/reverse-linked-list/description/",
+        "leetcode_number": "206. Reverse Linked List",
+        "diffculty": "Easy"
+    },
+    {
+        "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/description/",
+        "leetcode_number": "211. Design Add and Search Words Data Structure",
+        "diffculty": "Medium"
+    },
+    {
+        "url": "https://leetcode.com/problems/word-search-ii/description/",
+        "leetcode_number": "212. Word Search II",
+        "diffculty": "Hard"
+    },
+    {
+        "url": "",
+        "leetcode_number": "",
+        "diffculty": "Medium"
+    },
+    {
+        "url": "",
+        "leetcode_number": "",
+        "diffculty": "Medium"
+    },
+    {
+        "url": "",
+        "leetcode_number": "",
+        "diffculty": "Medium"
+    },
+    {
+        "url": "",
+        "leetcode_number": "",
+        "diffculty": "Medium"
+    },
+    {
+        "url": "",
+        "leetcode_number": "",
+        "diffculty": "Medium"
+    }
+]
